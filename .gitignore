@@ -1,0 +1,11 @@
+.DS_Store
+.cursor/
+node_modules/
+_backup/
+_backup2/
+Archive.zip
+why-de/
+*.log
+.vercel
+.env
+.env.*
