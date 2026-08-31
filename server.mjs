@@ -10,8 +10,9 @@ const app = express();
 app.use(
   express.static(__dirname, {
     index: 'index.html',
+    extensions: ['html'],
     setHeaders(res, filePath) {
-      if (filePath.endsWith('.html') || /\.(png|jpe?g|webp|gif|svg)$/i.test(filePath)) {
+      if (filePath.endsWith('.html') || filePath.endsWith('.css') || filePath.endsWith('.js') || /\.(png|jpe?g|webp|gif|svg)$/i.test(filePath)) {
         res.setHeader('Cache-Control', 'no-store');
       } else {
         res.setHeader('Cache-Control', 'public, max-age=3600');

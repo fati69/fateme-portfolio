@@ -26,7 +26,9 @@
       el.classList.add('is-visible');
       el.style.opacity = '1';
       el.style.transform = 'none';
-      el.style.filter = 'none';
+      if (!el.closest('.logos')) {
+        el.style.filter = 'none';
+      }
     });
 
     document.querySelectorAll('[data-count]').forEach((el) => {
@@ -199,10 +201,9 @@
   function initProjectCardHover(card, row, image) {
     if (prefersReducedMotion) return;
 
-    const media = row.querySelector('.project-row__media') || card;
     let magneticTween;
 
-    media.addEventListener('mouseenter', () => {
+    card.addEventListener('mouseenter', () => {
       card.classList.add('is-hover-lift');
       if (image) {
         gsap.to(image, { scale: 1.06, duration: 0.75, ease: EASE.editorial });
@@ -210,7 +211,7 @@
       gsap.to(card, { y: -6, duration: 0.65, ease: EASE.editorial });
     });
 
-    media.addEventListener('mouseleave', () => {
+    card.addEventListener('mouseleave', () => {
       card.classList.remove('is-hover-lift');
       if (magneticTween) magneticTween.kill();
       gsap.to(card, { x: 0, y: 0, duration: 0.75, ease: EASE.editorial });
@@ -221,8 +222,8 @@
 
     if (!desktopQuery.matches) return;
 
-    media.addEventListener('mousemove', (e) => {
-      const rect = media.getBoundingClientRect();
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
       const relX = (e.clientX - rect.left) / rect.width - 0.5;
       const relY = (e.clientY - rect.top) / rect.height - 0.5;
 
@@ -505,6 +506,15 @@
     });
   }
 
+  function initUiShots() {
+    document.querySelectorAll('.ui-shot img').forEach((img) => {
+      const markFilled = () => img.closest('.ui-shot')?.classList.add('is-filled');
+      if (img.complete && img.naturalWidth > 0) markFilled();
+      img.addEventListener('load', markFilled);
+      img.addEventListener('error', () => img.remove());
+    });
+  }
+
   /* ── Init ── */
   function init() {
     try {
@@ -517,6 +527,7 @@
       initPhilosophySteps();
       initContact();
       initNav();
+      initUiShots();
       ScrollTrigger.refresh();
 
       requestAnimationFrame(() => {

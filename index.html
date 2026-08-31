@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Klee+One&family=Syne:wght@400;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=15">
 </head>
 <body>
 
@@ -18,6 +18,7 @@
       <ul class="nav-links">
         <li><a href="#philosophy">What I do</a></li>
         <li><a href="#work">Work</a></li>
+        <li><a href="#ui">UI</a></li>
         <li><a href="#contact">Careers</a></li>
       </ul>
     </nav>
@@ -54,8 +55,8 @@
 
     <!-- Projects section header -->
     <div class="projects-header">
-      <p class="projects-header__eyebrow reveal-heading">Selected Works</p>
-      <h2 class="projects-header__title reveal-heading">Digital solutions designed</h2>
+      <p class="projects-header__eyebrow reveal-heading">Case Studies</p>
+      <h2 class="projects-header__title reveal-heading">Selected product work</h2>
     </div>
 
     <!-- Featured projects sticky deck -->
@@ -64,15 +65,16 @@
         <div class="project-row project-row--right">
           <div class="project-row__empty" aria-hidden="true"></div>
           <div class="project-row__media">
-            <a class="project-card" href="#work">
+            <a class="project-card" href="/work/dealer-app.html">
               <div class="project-card__image">
-                <img src="images/project-dealer-app.png" alt="Dealer app project">
+                <img src="images/project-dealer-app.png" alt="Dealer App case study">
               </div>
               <div class="project-card__overlay"></div>
               <div class="project-card__text">
                 <img class="project-card__arrow" src="images/project-arrow.svg" alt="" width="32" height="32">
-                <h2 class="project-card__title">Dealer app</h2>
+                <h2 class="project-card__title">Dealer App</h2>
                 <p class="project-card__desc">A dealership app that digitally and transparently manages the car ordering process, from request submission to final delivery.</p>
+                <p class="project-card__tags">Design System · Prototyping · Usability testing · A/B testing · Accessibility · Interview · IA · Userflow</p>
               </div>
             </a>
           </div>
@@ -81,49 +83,52 @@
         <div class="project-row project-row--left">
           <div class="project-row__empty" aria-hidden="true"></div>
           <div class="project-row__media">
-            <a class="project-card" href="#work">
+            <a class="project-card" href="/work/dealer-dashboard.html">
               <div class="project-card__image">
-                <img src="images/project-dealer-dashboard.png" alt="Dealer Dashboard project">
+                <img src="images/project-dealer-dashboard.png" alt="Dealer Dashboard case study">
               </div>
               <div class="project-card__overlay"></div>
               <div class="project-card__text">
                 <img class="project-card__arrow" src="images/project-arrow.svg" alt="" width="32" height="32">
                 <h2 class="project-card__title">Dealer Dashboard</h2>
-                <p class="project-card__desc is-caps">One place to find all sustainable products, powered by AI web scraping. EcoLife</p>
+                <p class="project-card__desc">The operational dashboard for dealers — tracking work, status and decisions in one place.</p>
+                <p class="project-card__tags">Accessibility · Prototyping · Usability testing · Userflow · Interview</p>
               </div>
             </a>
           </div>
         </div>
 
-        <div class="project-row project-row--right is-mobile-hidden">
+        <div class="project-row project-row--right">
           <div class="project-row__empty" aria-hidden="true"></div>
           <div class="project-row__media">
-            <a class="project-card" href="#work">
+            <a class="project-card" href="/work/order-journey.html">
               <div class="project-card__image">
-                <img src="images/project-dealer-app-2.png" alt="Dealer App project">
+                <img src="images/project-dealer-app-2.png" alt="Order journey Dealer case study">
               </div>
               <div class="project-card__overlay"></div>
               <div class="project-card__text">
                 <img class="project-card__arrow" src="images/project-arrow.svg" alt="" width="32" height="32">
-                <h2 class="project-card__title">Dealer App</h2>
-                <p class="project-card__desc is-caps">A flexible and generative identity, toolsuite and platform to power interactive storytelling between movie and game.</p>
+                <h2 class="project-card__title">Order journey (Dealer)</h2>
+                <p class="project-card__desc">The end-to-end dealer order journey — from request through fulfillment.</p>
+                <p class="project-card__tags">Accessibility · Prototyping · Usability testing · Userflow · Interview</p>
               </div>
             </a>
           </div>
         </div>
 
-        <div class="project-row project-row--left is-mobile-hidden">
+        <div class="project-row project-row--left">
           <div class="project-row__empty" aria-hidden="true"></div>
           <div class="project-row__media">
-            <a class="project-card" href="#work">
+            <a class="project-card" href="/work/learnit.html">
               <div class="project-card__image">
-                <img src="images/project-learnit.png" alt="Learnit App project">
+                <img src="images/project-learnit.png" alt="Learnit App case study">
               </div>
               <div class="project-card__overlay"></div>
               <div class="project-card__text">
                 <img class="project-card__arrow" src="images/project-arrow.svg" alt="" width="32" height="32">
                 <h2 class="project-card__title">Learnit App</h2>
-                <p class="project-card__desc is-caps">A campaign identity, design system and AI driven customization product.</p>
+                <p class="project-card__desc">An education product shaped through research, IA and accessible flows.</p>
+                <p class="project-card__tags">Usability testing · Interview · IA · Userflow · Wireframe · Accessibility</p>
               </div>
             </a>
           </div>
@@ -132,16 +137,47 @@
       </div>
     </section>
 
-    <!-- Client logos -->
-    <section class="logos" aria-label="Clients">
-      <div class="logos__track reveal-stagger">
-        <img src="images/logo-freenow.svg" alt="Freenow" height="22">
-        <img src="images/logo-kkl.svg" alt="KKL Luzern" height="19">
-        <img src="images/logo-evz.png" alt="EVZ Foundation" height="46">
-        <img src="images/logo-arolsen.svg" alt="Arolsen Archives" height="28">
-        <img src="images/logo-ofaj.svg" alt="OFAJ" height="34">
-        <img src="images/logo-goldbeck.svg" alt="Goldbeck" height="25">
-        <img src="images/logo-tier.svg" alt="TIER" height="21">
+    <!-- UI Design gallery -->
+    <section class="ui-lab" id="ui" aria-label="UI designs">
+      <div class="ui-lab__head">
+        <div>
+          <p class="ui-lab__eyebrow">UI Design</p>
+          <h2 class="ui-lab__title">Selected screens</h2>
+        </div>
+        <p class="ui-lab__note">Selected landing pages, on desktop.</p>
+      </div>
+
+      <div class="ui-lab__bento">
+        <a class="ui-shot ui-shot--hero is-filled" href="/ui/starnus.html">
+          <div class="ui-shot__frame">
+            <img src="images/ui/01-starnus.jpg?v=3" alt="Starnus robotics landing on desktop">
+          </div>
+          <span class="ui-shot__cap"><span>01</span> Starnus</span>
+        </a>
+        <a class="ui-shot is-filled" href="/ui/mores.html">
+          <div class="ui-shot__frame">
+            <img src="images/ui/02-mores.jpg?v=3" alt="Mores Estate website in a browser">
+          </div>
+          <span class="ui-shot__cap"><span>02</span> Mores Estate</span>
+        </a>
+        <a class="ui-shot is-filled" href="/ui/shahrzad.html">
+          <div class="ui-shot__frame">
+            <img src="images/ui/03-pishgaman.jpg?v=4" alt="Shahrzad landing on a desktop display">
+          </div>
+          <span class="ui-shot__cap"><span>03</span> Shahrzad</span>
+        </a>
+        <a class="ui-shot is-filled" href="/ui/sevil.html">
+          <div class="ui-shot__frame">
+            <img src="images/ui/04-sevil.jpg?v=3" alt="Sevil Ailad website on a laptop">
+          </div>
+          <span class="ui-shot__cap"><span>04</span> Sevil Ailad</span>
+        </a>
+        <a class="ui-shot is-filled" href="/ui/planaway.html">
+          <div class="ui-shot__frame">
+            <img src="images/ui/05-planaway.jpg?v=3" alt="PlanAway travel UI on a laptop">
+          </div>
+          <span class="ui-shot__cap"><span>05</span> PlanAway</span>
+        </a>
       </div>
     </section>
 
@@ -286,10 +322,6 @@
             <a class="contact__detail-value" href="tel:+989108228796">+98 910 822 8796</a>
           </div>
         </div>
-        <div class="contact__actions">
-          <a class="contact__cta" href="mailto:Fateme69rafiyan76@gmail.com">Book A Discovery Call</a>
-          <a class="contact__cta contact__cta--secondary" href="https://docs.google.com/document/d/1c9REnbQKXAbpCczPapaIt_k3926y4KfT/edit?usp=sharing&ouid=106092551237580604649&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">Download Resume</a>
-        </div>
         <div class="contact__social">
           <a href="https://www.linkedin.com/in/fateme-rafiyan/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a href="https://t.me/frfyn" target="_blank" rel="noopener noreferrer">Telegram</a>
@@ -321,6 +353,6 @@
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="animations.js"></script>
+  <script src="animations.js?v=10"></script>
 </body>
 </html>
