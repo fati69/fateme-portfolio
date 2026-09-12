@@ -166,6 +166,7 @@
   }
 
   function initHeroScroll() {
+    if (!desktopQuery.matches) return;
     const hero = document.querySelector('.hero');
     const heroInner = document.querySelector('.hero__inner');
     const portraitWrap = document.querySelector('.hero__portrait-wrap');
@@ -247,6 +248,11 @@
       const image = row.querySelector('.project-card__image img');
       if (!card || prefersReducedMotion) return;
 
+      if (!desktopQuery.matches) {
+        initProjectCardHover(card, row, image);
+        return;
+      }
+
       gsap.fromTo(
         card,
         { scale: 0.8 },
@@ -279,41 +285,27 @@
         );
       }
 
-      if (desktopQuery.matches) {
-        gsap.to(row, {
-          yPercent: -100,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: row,
-            start: 'bottom top',
-            end: '+=100%',
-            scrub: true,
-          },
-        });
+      gsap.to(row, {
+        yPercent: -100,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: row,
+          start: 'bottom top',
+          end: '+=100%',
+          scrub: true,
+        },
+      });
 
-        gsap.to(card, {
-          scale: 0.8,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: row,
-            start: 'bottom top',
-            end: '+=100%',
-            scrub: true,
-          },
-        });
-      } else if (index < 2) {
-        gsap.to(card, {
-          opacity: 0,
-          scale: 0.6,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: row,
-            start: 'center center',
-            end: '+=100%',
-            scrub: true,
-          },
-        });
-      }
+      gsap.to(card, {
+        scale: 0.8,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: row,
+          start: 'bottom top',
+          end: '+=100%',
+          scrub: true,
+        },
+      });
 
       initProjectCardHover(card, row, image);
     });
