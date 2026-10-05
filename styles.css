@@ -615,7 +615,7 @@ body {
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
 }
 
@@ -729,6 +729,24 @@ a.ui-shot:focus-visible .ui-shot__frame {
   font-weight: 300;
   font-size: 48px;
   color: var(--gray);
+}
+
+.metric--group {
+  grid-column: 1 / -1;
+}
+
+.metric__outcomes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px 48px;
+}
+
+.metric__caption {
+  margin-top: 4px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--gray);
+  opacity: 0.8;
 }
 
 /* ── Philosophy ── */
@@ -1207,6 +1225,13 @@ a.ui-shot:focus-visible .ui-shot__frame {
   .metric__label { font-size: 18px; }
 
   .metric__value { font-size: 32px; }
+
+  .metric__outcomes {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .metric__caption { font-size: 14px; }
 
   .philosophy-intro { padding: 48px var(--pad) 20px; }
 

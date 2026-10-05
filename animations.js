@@ -32,9 +32,7 @@
     });
 
     document.querySelectorAll('[data-count]').forEach((el) => {
-      const target = el.dataset.count;
-      const suffix = el.dataset.suffix || '';
-      if (target) el.textContent = target + suffix;
+      if (el.dataset.count) el.textContent = formatMetricValue(el, el.dataset.count);
     });
   }
 
@@ -381,23 +379,32 @@
   }
 
   /* ── Impact metrics ── */
+  function formatMetricValue(el, val) {
+    const raw = el.dataset.count || '';
+    const decimals = (String(raw).split('.')[1] || '').length;
+    const prefix = el.dataset.prefix || '';
+    const suffix = el.dataset.suffix || '';
+    const numeric = Number(val);
+    const n = decimals ? numeric.toFixed(decimals) : String(Math.round(numeric));
+    return prefix + n + suffix;
+  }
+
   function initMetricsCountUp() {
     const values = gsap.utils.toArray('.metric__value[data-count]');
     if (!values.length) return;
 
     if (prefersReducedMotion) {
       values.forEach((el) => {
-        el.textContent = el.dataset.count + (el.dataset.suffix || '');
+        el.textContent = formatMetricValue(el, el.dataset.count);
       });
       return;
     }
 
     values.forEach((el) => {
       const target = parseFloat(el.dataset.count);
-      const suffix = el.dataset.suffix || '';
       const counter = { val: 0 };
 
-      el.textContent = '0' + suffix;
+      el.textContent = formatMetricValue(el, 0);
 
       gsap.to(counter, {
         val: target,
@@ -409,7 +416,7 @@
           toggleActions: 'play none none none',
         },
         onUpdate() {
-          el.textContent = Math.round(counter.val) + suffix;
+          el.textContent = formatMetricValue(el, counter.val);
         },
       });
     });
